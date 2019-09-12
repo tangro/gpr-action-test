@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@tangro'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'publish package'
+        run: |
+          echo @tangro:registry=https://npm.pkg.github.com/ >> .npmrc
+          npm publish --verbose
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Log
+        if: always()
+        run: cat /home/runner/.npm/_logs/*.log
