@@ -21,7 +21,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'publish package'
-        uses: actions/bin/debug@master
         run: |
           npm run test 
           npm run build
