@@ -21,6 +21,3 @@ jobs:
           npm publish --verbose
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Log
-        if: always()
-        run: cat /home/runner/.npm/_logs/*.log
