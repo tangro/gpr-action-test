@@ -20,6 +20,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'publish package'
         run: |
+          echo //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }} >> ~/.npmrc
           npm run test 
           npm run build
           npm config list 
