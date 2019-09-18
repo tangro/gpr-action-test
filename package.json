@@ -7,6 +7,9 @@
     "test": "",
     "build": ""
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@tangro"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tangro/gpr-action-test.git"
