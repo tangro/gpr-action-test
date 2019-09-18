@@ -24,6 +24,7 @@ jobs:
         run: |
           npm run test 
           npm run build
+          echo registry=https://npm.pkg.github.com/@tangro
           npm config list 
           npm publish
         env:
