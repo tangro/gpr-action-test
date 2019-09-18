@@ -8,7 +8,7 @@
     "build": ""
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@TANGRO"
+    "registry": "https://npm.pkg.github.com/tangro"
   },
   "repository": {
     "type": "git",
